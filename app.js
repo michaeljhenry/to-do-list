@@ -8,7 +8,7 @@ var listController = (function() {
     var data = {
         listArr: []
     };
-
+    
     return {
         addItem: function(title, description) {
             var newItem, ID;
@@ -20,12 +20,8 @@ var listController = (function() {
                 ID = 0;
             }
 
-            newItem = new ListObj(title,description,ID);
-
-            
+            newItem = new ListObj(title,description,ID);      
             data.listArr.push(newItem);
-
-
             return newItem; 
         },
         deleteItem: function(ID) {
@@ -41,14 +37,10 @@ var listController = (function() {
                     num++;
                 }  
             })
-
             var deletedEl = data.listArr.splice(index,1);
-            
             return data.listArr;
-
         }
     }
-
 })();
 
 var UIController = (function() {
@@ -58,9 +50,7 @@ var UIController = (function() {
             inputDesc: '.add__description',
             inputBtn: '.add__btn',
             list: '.entered__list'
-        };
-
-        
+        };   
         return {
             newInput: function() {
                 return {
@@ -70,15 +60,11 @@ var UIController = (function() {
             },
             clearFields: function(title) {
 
-                if(title === '') {
-
-                }
+                if(title === '') {}
                 if(title !== '') {
                     document.querySelector(DOMStrings.inputTitle).value = '';
                     document.querySelector(DOMStrings.inputDesc).value = '';
                 }
-                
-
             },
             displayItem: function(obj) {
                 var item, element;
@@ -95,10 +81,8 @@ var UIController = (function() {
             deleteItem: function(selectorID) {
                 var el = document.getElementById(selectorID);
                 el.parentNode.removeChild(el);
-            }
-        
+            }   
         };
-
 })();
 
 var controller = (function(listCtrl, UICtrl){
@@ -107,13 +91,8 @@ var controller = (function(listCtrl, UICtrl){
     document.querySelector(".add__btn").addEventListener("click", function() {
         inputs = UICtrl.newInput();
         UICtrl.clearFields(inputs.title);
-        if(inputs.title === '') {
-
-
-        }
+        if(inputs.title === '') {}
         else {
-
-    
             var Item = listCtrl.addItem(inputs.title, inputs.description);
             UICtrl.displayItem(Item);
         }
