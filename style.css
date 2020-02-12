@@ -1,7 +1,10 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 html,
@@ -35,9 +38,15 @@ h1 {
 
 h1 {
     border-bottom: 5px solid #143d59;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     font-size: 40px;
     height: 70px;
 }
@@ -86,9 +95,16 @@ label {
 }
 
 .entered__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
     min-height: 10px;
     width: 700px;
     margin: 100px auto;
@@ -97,9 +113,16 @@ label {
 }
 
 .list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex: 1 0 0;
-    flex-direction: row;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 0px;
+            flex: 1 0 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     text-align: left;
     border-top: 1px solid #143d59;
     margin-bottom: 10px;
@@ -111,9 +134,14 @@ label {
 }
 .delete {
     width: 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-self: flex-start;
-    justify-content: flex-end;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
 } 
 
 .item__delete--btn {
